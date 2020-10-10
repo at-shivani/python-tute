@@ -140,8 +140,3 @@ def dfs_post(bst, a=None):
     dfs_post(bst.right)
     print(bst.key, end=' ')
 
-
-
-
-if __name__ == '__main__':
-    test()
