@@ -1,3 +1,4 @@
+
 def while_func():
 	counter = 1
 	while counter <= 5:
@@ -19,8 +20,17 @@ def str_func():
 				letter_list.append(a_letter)
 	print(letter_list)
 
-
-
 # while_func()
 # for_func()
 # str_func()
+
+def square(n):
+	return n*n
+
+
+def math_func():
+	n=4
+	print(square(n))
+	print(square(3))
+
+
