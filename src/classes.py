@@ -7,6 +7,46 @@ def gcd(a, b):
 
 	return gcd(b%a, a)
 
+class Point:
+	def __init__(self, x=0, y=0):
+		self.x = x
+		self.y = y
+
+
+	def __add__(self, p2):
+		return Point(self.x + p2.x, self.y + p2.y)
+
+	def __neg__(self):
+		return Point(-self.x, -self.y)
+
+	def __repr__(self):
+		return f'Point{self.x, self.y}'
+
+
+
+
+def Vector:
+	def __init__(self, start:Point, end:Point):
+		self.start = start or Point()
+		self.end = end or Point()
+
+	def shift_at_origin(self):
+		return Vector(self.start - self.end, Point())
+
+	def __repr__(self):
+		return f'{self.start} ---> {self.end}'
+
+	def __add__(self, other_v):
+		other_v = other_v.shift_at_origin()
+		return Vector(self.start, self.end + other_v.end)
+
+
+	def test(self):
+		print('Printing Vector:', self)
+		print()
+
+		
+
 
 class Fraction:
 	def __init__(self, num=0, den=1):
@@ -21,7 +61,7 @@ class Fraction:
 			self.n = -abs(self.n)
 			self.d = abs(self.d)
 
-	def simplify(self): 
+	def simplify(self):
 		g = gcd(self.n, self.d)
 		self.n //= g
 		self.d //= g
@@ -47,11 +87,10 @@ class Fraction:
 
 
 
-# one_fifth = Fraction(1, 5)
-# # print(one_fifth)
-# f1 = Fraction(7,8)
-# f2 = Fraction(11,12)
-# ans = f1 - f2
-# # ans = Fraction(5, 10)
-# print(ans)
-
+one_fifth = Fraction(1, 5)
+# print(one_fifth)
+f1 = Fraction(7,8)
+f2 = Fraction(11,12)
+ans = f1 - f2
+# ans = Fraction(5, 10)
+print(ans)

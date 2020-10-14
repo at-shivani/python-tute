@@ -47,7 +47,6 @@ def test_bst():
     #         print(node)
     #     print()
 
-
     print('\n\nChecking del_')
     for i in [72, 131, 21, 163, 111, 272, 46]:
         a_node = B.md_find(bst_, i)
